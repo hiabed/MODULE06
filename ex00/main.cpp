@@ -8,5 +8,6 @@ int main(int ac, char **av)
         return 0;
     }
     std::string literal = av[1];
-    ScalarConverter convert(literal);
+    ScalarConverter c;
+    ScalarConverter::convert(literal);
 }

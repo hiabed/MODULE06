@@ -7,17 +7,18 @@
 class ScalarConverter
 {
 private:
-    int _i;
-    char _c;
-    double _d;
-    float _f;
+    static int _i;
+    static char _c;
+    static double _d;
+    static float _f;
 public:
     ScalarConverter();
     ScalarConverter(std::string &av1);
     ScalarConverter(const ScalarConverter &other);
     ScalarConverter &operator=(const ScalarConverter &other);
     static void convert(std::string &literal);
-    void print_info(float av1);
+    static void print_info(float av1);
+    static void print_charType();
     ~ScalarConverter();
 };
 
