@@ -7,5 +7,6 @@ int main(int ac, char **av)
         std::cout << "Usage: ./convert + <value to cast>\n";
         return 0;
     }
-    
+    std::string literal = av[1];
+    ScalarConverter convert(literal);
 }
