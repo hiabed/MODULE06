@@ -1,6 +1,8 @@
 #ifndef SERIALIZER_HPP
 #define SERIALIZER_HPP
 
+#include <iostream>
+
 typedef struct uintptr_s
 {
     
