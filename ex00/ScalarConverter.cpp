@@ -23,41 +23,41 @@ void ScalarConverter::print_charType()
 
 void ScalarConverter::print_info(float av1)
 {
-    //char;
-    if(isprint(av1))
+    if(isprint(av1)) //char;
         std::cout << "char: " << _c << std::endl;
     else if (isnan(av1))
         std::cout << "char: impossible\n";
     else if(!isprint(av1))
         std::cout << "char: Non displayable" << std::endl;
-    // int;
-    if (isnan(av1))
+    if (isnan(av1)) //int;
         std::cout << "int: impossible\n";
     else
         std::cout << "int: " << _i << std::endl;
-    //float;
-    if (av1 != static_cast<int>(av1))
+    if (av1 != static_cast<int>(av1)) //float
         std::cout << "float: " << _f << "f" << std::endl;
     else
         std::cout << "float: " << _f << ".0f" << std::endl;
-    //double;
-    if (av1 != static_cast<int>(av1))
+    if (av1 != static_cast<int>(av1)) //double
         std::cout << "double: " << _d << std::endl;
     else
         std::cout << "double: " << _d << ".0" << std::endl;
 }
 
+int inf_nan(std::string &av1)
+{
+    if (av1 == "+inf" || av1 == "-inf" || av1 == "+inff" || av1 == "-inff" || av1 == "nan" || av1 == "nanf")
+        return 1;
+    return 0;
+}
+
 void ScalarConverter::convert(std::string &av1)
 {
-    int valid = 0;
-    if (av1 == "+inf" || av1 == "-inf" || av1 == "+inff" || av1 == "-inff" || av1 == "nan" || av1 == "nanf")
-        valid++;
-    else if (!is_valid(av1))
+    if (!is_valid(av1) && !inf_nan(av1))
     {
         std::cout << av1 << " is not a valid input\n";
         return ;
     }
-    if (is_character(av1))
+    if (is_character(av1) && !isdigit(av1[0]))
     {
         _i = static_cast<int>(av1[0]);
         _c = static_cast<char>(av1[0]);
