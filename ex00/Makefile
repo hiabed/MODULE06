@@ -4,7 +4,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CXXFILES = main.cpp ScalarConverter.cpp \
+CXXFILES = main.cpp ScalarConverter.cpp parsing.cpp\
 
 OBJ = ${CXXFILES:.cpp=.o}
 

@@ -4,6 +4,9 @@
 #include <iostream>
 #include <cmath>
 
+int is_valid(std::string &literal);
+int is_character(std::string& literal);
+
 class ScalarConverter
 {
 private:

@@ -49,16 +49,26 @@ void ScalarConverter::print_info(float av1)
 
 void ScalarConverter::convert(std::string &av1)
 {
-    if (isalpha(av1[0]) && av1.length() == 1)
+    int valid = 0;
+    if (av1 == "+inf" || av1 == "-inf" || av1 == "+inff" || av1 == "-inff" || av1 == "nan" || av1 == "nanf")
+        valid++;
+    else if (!is_valid(av1))
     {
-        _c = av1[0];
+        std::cout << av1 << " is not a valid input\n";
+        return ;
+    }
+    if (is_character(av1))
+    {
+        _i = static_cast<int>(av1[0]);
+        _c = static_cast<char>(av1[0]);
+        _f = static_cast<float>(av1[0]);
+        _d = static_cast<double>(av1[0]);
         print_charType();
         return ;
     }
     const char *s = av1.c_str();
     _i = static_cast<int>(atoi(s));
-    if (atoi(s))
-        _c = static_cast<char>(atoi(s));
+    _c = static_cast<char>(atoi(s));
     _f = static_cast<float>(atof(s));
     _d = static_cast<double>(atof(s));
     print_info(atof(s));
