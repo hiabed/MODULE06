@@ -1,10 +1,10 @@
-NAME = Serializer
+NAME = Base
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
-CXXFILES = main.cpp Base.cpp \
+CXXFILES = main.cpp Base.cpp functions.cpp \
 
 OBJ = ${CXXFILES:.cpp=.o}
 
