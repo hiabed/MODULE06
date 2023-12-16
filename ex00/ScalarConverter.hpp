@@ -14,14 +14,14 @@ private:
     static char _c;
     static double _d;
     static float _f;
-public:
     ScalarConverter();
     ScalarConverter(const ScalarConverter &other);
     ScalarConverter &operator=(const ScalarConverter &other);
+    ~ScalarConverter();
+public:
     static void convert(std::string &literal);
     static void print_info(float av1);
     static void print_charType();
-    ~ScalarConverter();
 };
 
 #endif
