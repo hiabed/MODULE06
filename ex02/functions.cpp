@@ -20,7 +20,7 @@ Base *generate(void)
 void identify(Base *p)
 {
 	std::cout << "identify using Base *: ";
-    
+
 	if (dynamic_cast<A *>(p))
 		std::cout << "A" << std::endl;
 	else if (dynamic_cast<B *>(p))
@@ -62,4 +62,4 @@ void identify(Base& p)
             }
         }
     }
-    }
+}
