@@ -5,18 +5,20 @@
 
 typedef struct s_Data
 {
-    void *ptr;
+    std::string str;
 }   Data;
 
 class Serializer
 {
-private:
-    
 public:
+    // Orthodox canolical form;
     Serializer();
-    uintptr_t serialize(Data* ptr);
-    Data* deserialize(uintptr_t raw);
+    Serializer(const Serializer &other);
+    Serializer &operator=(const Serializer &other);
     ~Serializer();
+    // Methods;
+    static uintptr_t serialize(Data* ptr);
+    static Data* deserialize(uintptr_t raw);
 };
 
 #endif
