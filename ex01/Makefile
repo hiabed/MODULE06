@@ -4,7 +4,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
-CXXFILES = main.cpp ScalarConverter.cpp \
+CXXFILES = main.cpp Serializer.cpp \
 
 OBJ = ${CXXFILES:.cpp=.o}
 
