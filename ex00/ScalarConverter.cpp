@@ -29,7 +29,7 @@ void ScalarConverter::print_info(float av1)
         std::cout << "char: impossible\n";
     else if(!isprint(av1))
         std::cout << "char: Non displayable" << std::endl;
-    if (isnan(av1)) //int;
+    if (isnan(av1) || av1 == INFINITY || av1 == -INFINITY) //int;
         std::cout << "int: impossible\n";
     else
         std::cout << "int: " << _i << std::endl;

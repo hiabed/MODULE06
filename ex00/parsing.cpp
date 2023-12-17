@@ -33,7 +33,7 @@ int is_valid(std::string &literal)
         if (literal[i] == '.')
         {
             dots++;
-            if (dots > 1 || (i == 0 && literal[i + 1]) || literal.length() > 1 || (isascii(literal[i + 1]) && literal[i + 1] && !isdigit(literal[i + 1])))
+            if (dots > 1 || (i == 0 && literal[i + 1]) || (static_cast<size_t>(i) == literal.length() - 1) || (isascii(literal[i + 1]) && literal[i + 1] && !isdigit(literal[i + 1])))
                 return 0;
         }
         if (literal[i] == '+' || literal[i] == '-')
